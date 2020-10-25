@@ -9,29 +9,29 @@ class App extends Component {
     titre : "Mon Catalogue Voitures."
   }
 
-  changeTitle = (e) => {
+  // changeTitle = (e) => {
 
-    this.setState({titre : "Nouveau Titre !"})
+  //   this.setState({titre : "Nouveau Titre !"})
 
-  }
+  // }
 
-  changeViaParam = (t) => {
+  // changeViaParam = (t) => {
 
-    this.setState({titre : t})
+  //   this.setState({titre : t})
 
-  }
+  // }
 
-  changeViaBind = (t) => {
+  // changeViaBind = (t) => {
 
-    this.setState({titre : t})
+  //   this.setState({titre : t})
 
-  }
+  // }
 
-  changeViaInput = (e) => {
+  // changeViaInput = (e) => {
 
-    this.setState({titre : e.target.value})
+  //   this.setState({titre : e.target.value})
 
-  }
+  // }
 
 
   render() {
@@ -41,11 +41,14 @@ class App extends Component {
         
         <Mycars title ={this.state.titre} />
         
-        <button onClick= {this.changeTitle} >Changer le nom en dur</button>
+        {/* <button onClick= {this.changeTitle} >Changer le nom en dur</button>
         <button onClick= {() => this.changeViaParam('Nouveau titre via Param')} >Changer via paramètre</button>
         <button onClick= {this.changeViaBind.bind(this,'Nouveau titre via Bind')} >Changer via bind</button>
 
-        <input type="text" onChange={this.changeViaInput} value={this.state.titre}></input>
+        <input type="text" onChange={this.changeViaInput} value={this.state.titre}></input> */}
+
+
+
       </div>
     );
 

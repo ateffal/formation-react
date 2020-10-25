@@ -4,14 +4,23 @@ import Car from './Cars'
 class Mycars extends Component {
 
 
-    onCopy = () => {
-        alert('Merci de ne pas copier le texte !')
+    state = {
+        voitures: [
+            { name: 'Ford', color: 'red', year: '2019' },
+            { name: 'Tucson', color: 'gray', year: '2017' },
+            { name: 'Opel', color: 'black', year: '2002' },
+        ]
     }
 
     // addStyle = (e) => {
 
     //     e.target.classList.toggle('styled')
     // }
+
+    addTenYears = () => {
+        const updatedState = this.state.voitures.map((e) => { e.year = parseInt(e.year) - 10 })
+        this.setState({ updatedState })
+    }
 
 
     render() {
@@ -22,13 +31,20 @@ class Mycars extends Component {
             <div>
 
                 <h1 > {this.props.title}</h1>
-                <p onCopy={this.onCopy}>Lorem ipsum dolor sit amet consectetur adipisicing , voluptatem eius.</p>
+                <button onClick={this.addTenYears} >+10 ans</button>
 
-                <Car color="gray"> Tucson </Car>
-                <Car color="black">  Opel </Car>
-                <Car color="green"> Renault </Car>
-                <Car> </Car>
+                {
+                    this.state.voitures.map((voiture,index) => {
+                        return (
+                            <Car key={index} color={voiture.color} year={voiture.year}>
+                                {voiture.name}
+                            </Car>
 
+                        )
+                    }
+
+                    )
+                }
 
             </div>
         )
