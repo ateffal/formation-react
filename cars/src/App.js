@@ -6,7 +6,9 @@ import Mycars from './components/Mycars'
 class App extends Component {
 
   state = {
-    titre : "Mon Catalogue Voitures."
+    titre : "Mon Catalogue Voitures.",
+    messageDeApp : 'Message de App à MyCars',
+    messageDeMyCars : 'pas de message'
   }
 
   // changeTitle = (e) => {
